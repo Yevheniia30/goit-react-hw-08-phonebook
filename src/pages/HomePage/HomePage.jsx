@@ -1,10 +1,7 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
-
-const HomePage = props => {
-  return <div>HomePage</div>;
+const HomePage = () => {
+  return (
+    <h2 style={{ textTransform: 'uppercase' }}>Welcome to phonebook app</h2>
+  );
 };
-
-HomePage.propTypes = {};
 
 export default HomePage;

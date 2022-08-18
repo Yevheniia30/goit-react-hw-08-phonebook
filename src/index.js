@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 // import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-// import { PersistGate } from 'redux-persist/integration/react';
+import { PersistGate } from 'redux-persist/integration/react';
 // import { configureStore } from '@reduxjs/toolkit';
 import App from 'App';
 import './index.css';
-import {
-  store,
-  // persistor
-} from './redux/store';
+import { store, persistor } from './redux/store';
 
 // const reducer = (state = {}, action) => state;
 // const store = configureStore(reducer);
@@ -19,11 +16,11 @@ import {
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
   <Provider store={store}>
-    {/* <PersistGate loading="Loading..." persistor={persistor}> */}
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-    {/* </PersistGate> */}
+    <PersistGate loading="Loading..." persistor={persistor}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PersistGate>
   </Provider>
   // </React.StrictMode>
 );

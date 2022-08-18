@@ -37,7 +37,7 @@ export const ContactForm = () => {
 
     const contact = {
       name,
-      phone,
+      number: phone,
     };
 
     addedName

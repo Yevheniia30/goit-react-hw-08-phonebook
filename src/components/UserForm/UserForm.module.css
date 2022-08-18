@@ -2,9 +2,9 @@
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
+    /* width: 30%; */
 
 }
-
 
 .label:not(:last-child){
     margin-bottom: 20px;
@@ -17,7 +17,6 @@
      border-radius: 5px;
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
-    text-transform: uppercase;
 }
 
 .input:hover,
@@ -25,9 +24,19 @@
 transform: scale(1.1);
 }
 
+.btn{
+    width: 211px;
+    text-transform: uppercase;
+}
+
 .btn:hover,
 .btn:focus{
     background-color: rgb(63, 145, 63);
     color: #fff;
     
+}
+
+.link{
+    /* text-decoration: none; */
+     color: #5383ec;
 }

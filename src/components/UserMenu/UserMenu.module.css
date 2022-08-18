@@ -1,0 +1,44 @@
+.usermenu{
+    display: flex;
+    align-items: center;
+}
+
+/* .btn1{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #acaaaa;    
+    font-weight: bold;
+    background-color: #fff;
+    border: none;
+    padding: 2px;
+    margin-left: 10px;
+   text-align: center;
+} */
+
+.btn{
+    display: block;
+    padding: 2px 4px;
+    /* margin-top: 5px; */
+    margin-left: 10px;
+    border: 1px solid #cecece;
+     border-radius: 5px;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+    text-transform: uppercase;
+}
+
+.btn:hover,
+.btn:focus{
+transform: scale(1.1);
+}
+.avatar{
+    background-color: #cecece;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    /* padding: 10px; */
+}

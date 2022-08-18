@@ -1,9 +1,10 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { instance } from 'services/api';
 
-const instance = axios.create({
-  baseURL: 'https://62eebbae8d7bc7c2eb71c14b.mockapi.io/api/v1',
-});
+// const instance = axios.create({
+//   baseURL: 'https://62eebbae8d7bc7c2eb71c14b.mockapi.io/api/v1',
+// });
 
 // thunk
 export const getContact = createAsyncThunk('contacts/getContact', async () => {
@@ -28,13 +29,13 @@ export const deleteContact = createAsyncThunk(
   }
 );
 
-export const toggleContact = createAsyncThunk(
-  'contacts/toggleContact',
-  async ({ id, isImportant }) => {
-    const { data } = await instance.put(`/contacts/${id}`, { isImportant });
-    return data;
-  }
-);
+// export const toggleContact = createAsyncThunk(
+//   'contacts/toggleContact',
+//   async ({ id, isImportant }) => {
+//     const { data } = await instance.put(`/contacts/${id}`, { isImportant });
+//     return data;
+//   }
+// );
 
 // EXAMPLES
 // export const addContact = createAsyncThunk(

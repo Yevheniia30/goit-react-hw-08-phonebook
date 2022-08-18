@@ -3,7 +3,7 @@ import {
   getContact,
   addContact,
   deleteContact,
-  toggleContact,
+  // toggleContact,
 } from './contactsOperations';
 // import { filterContact } from './contactsActions';
 
@@ -67,21 +67,18 @@ const contactsSlice = createSlice({
       state.error = error;
     },
 
-    [toggleContact.pending]: state => ({
-      ...state,
-      //   loading: true,
-      error: null,
-    }),
-    [toggleContact.fulfilled]: (state, { payload }) => {
-      state.contacts = state.contacts.map(item =>
-        item.id === payload.id ? payload : item
-      );
-      //   state.loading = false;
-    },
-    [toggleContact.rejected]: (state, { error }) => {
-      //   state.loading = false;
-      state.error = error;
-    },
+    // [toggleContact.pending]: state => ({
+    //   ...state,
+    //   error: null,
+    // }),
+    // [toggleContact.fulfilled]: (state, { payload }) => {
+    //   state.contacts = state.contacts.map(item =>
+    //     item.id === payload.id ? payload : item
+    //   );
+    // },
+    // [toggleContact.rejected]: (state, { error }) => {
+    //   state.error = error;
+    // },
   },
 });
 

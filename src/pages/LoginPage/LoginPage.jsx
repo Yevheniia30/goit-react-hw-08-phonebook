@@ -1,10 +1,15 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { login } from 'redux/auth/authOperations';
+import { UserForm } from 'components/UserForm';
 
-const LoginPage = props => {
-  return <div>LoginPage</div>;
+const LoginPage = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = user => {
+    dispatch(login(user));
+  };
+
+  return <UserForm onSubmit={handleSubmit} />;
 };
-
-LoginPage.propTypes = {};
 
 export default LoginPage;

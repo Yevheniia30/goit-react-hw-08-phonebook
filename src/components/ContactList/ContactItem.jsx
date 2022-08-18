@@ -1,30 +1,29 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import {
-  toggleContact,
+  // toggleContact,
   deleteContact,
 } from 'redux/contacts/contactsOperations';
 import s from './ContactList.module.css';
-import { FaStar } from 'react-icons/fa';
+// import { FaStar } from 'react-icons/fa';
 
 export const ContactItem = ({ item }) => {
   const dispatch = useDispatch();
   // console.log('item', item);
   return (
     <li className={s.item}>
-      <FaStar
+      {/* <FaStar
         fill={item?.isImportant ? '#f5d20d' : '#cecece'}
         title="mark as important"
         cursor="pointer"
-        // stroke-width="10"
         onClick={() =>
           dispatch(
             toggleContact({ id: item.id, isImportant: !item.isImportant })
           )
         }
-      />
+      /> */}
       <b className={s.name}>{item.name}</b>
-      <span>{item.phone}</span>
+      <span>{item.number}</span>
       <button
         className={s.btn}
         onClick={() => dispatch(deleteContact(item.id))}
@@ -38,8 +37,8 @@ export const ContactItem = ({ item }) => {
 ContactItem.propTypes = {
   item: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    phone: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
-    isImportant: PropTypes.bool,
+    // isImportant: PropTypes.bool,
   }),
 };
