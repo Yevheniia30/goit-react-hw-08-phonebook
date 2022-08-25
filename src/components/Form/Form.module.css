@@ -27,6 +27,7 @@ transform: scale(1.1);
 .btn{
     width: 211px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 .btn:hover,

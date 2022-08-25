@@ -5,7 +5,7 @@ import s from './ContactList.module.css';
 import { contactsOperations } from 'redux/contacts';
 import { ContactItem } from './ContactItem';
 
-export const ContactList = () => {
+export const ContactList = ({ openModal }) => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.contacts);
   const filter = useSelector(state => state.contacts.filter);
@@ -36,7 +36,7 @@ export const ContactList = () => {
     <>
       <ul className={s.list}>
         {filteredContacts?.map(item => (
-          <ContactItem item={item} key={item.id} />
+          <ContactItem item={item} key={item.id} openModal={openModal} />
         ))}
       </ul>
       {loading && <ThreeDots color="#00BFFF" height={80} width={80} />}

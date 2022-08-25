@@ -5,9 +5,9 @@ import {
   deleteContact,
 } from 'redux/contacts/contactsOperations';
 import s from './ContactList.module.css';
-// import { FaStar } from 'react-icons/fa';
+import { FaTrash, FaEdit } from 'react-icons/fa';
 
-export const ContactItem = ({ item }) => {
+export const ContactItem = ({ item, openModal }) => {
   const dispatch = useDispatch();
   // console.log('item', item);
   return (
@@ -24,12 +24,22 @@ export const ContactItem = ({ item }) => {
       /> */}
       <b className={s.name}>{item.name}</b>
       <span>{item.number}</span>
-      <button
-        className={s.btn}
-        onClick={() => dispatch(deleteContact(item.id))}
-      >
-        Delete contact
-      </button>
+      <div className={s.btns}>
+        <button
+          className={s.btn}
+          onClick={() => openModal(item)}
+          title="Edit contact"
+        >
+          <FaEdit fill="#757474" className={s.edit} />
+        </button>
+        <button
+          className={s.btn}
+          onClick={() => dispatch(deleteContact(item.id))}
+          title="Delete contact"
+        >
+          <FaTrash fill="#757474" className={s.del} />
+        </button>
+      </div>
     </li>
   );
 };

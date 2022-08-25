@@ -25,7 +25,7 @@ const App = () => {
   return (
     <div className="app">
       <AppBar />
-      <Suspense>
+      <Suspense fallback={<p>Loading....</p>}>
         <Routes>
           <Route path={routes.home} exact="true" element={<HomePage />} />
 

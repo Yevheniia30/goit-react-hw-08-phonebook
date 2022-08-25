@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import s from './AppBar.module.css';
-import { Navigation } from 'components/Navigation';
+import { Navigation } from './Navigation';
 import { UserMenu } from 'components/UserMenu';
 import { useSelector } from 'react-redux';
 import { routes } from 'routes';

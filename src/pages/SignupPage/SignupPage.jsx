@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { signup } from 'redux/auth/authOperations';
-import { UserForm } from 'components/UserForm';
+import { UserForm } from 'components/Form';
 const SignupPage = () => {
   const dispatch = useDispatch();
   const handleSubmit = user => {

@@ -29,6 +29,14 @@ export const deleteContact = createAsyncThunk(
   }
 );
 
+export const editContact = createAsyncThunk(
+  'contacts/toggleContact',
+  async ({ id, isImportant }) => {
+    const { data } = await instance.put(`/contacts/${id}`, { isImportant });
+    return data;
+  }
+);
+
 // export const toggleContact = createAsyncThunk(
 //   'contacts/toggleContact',
 //   async ({ id, isImportant }) => {
