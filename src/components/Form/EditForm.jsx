@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { editContact } from 'redux/contacts/contactsOperations';
 // import PropTypes from 'prop-types';
 import s from './Form.module.css';
 
@@ -8,6 +9,8 @@ export const EditForm = ({ contactToEdit, closeModal }) => {
   const { name, number } = contactTo;
 
   const dispatch = useDispatch();
+  //   const contacts = useSelector(state => state.contacts.contacts);
+  const [warn, setWarn] = useState('');
 
   const handleChange = e => {
     // console.log(e.currentTarget);
@@ -30,9 +33,18 @@ export const EditForm = ({ contactToEdit, closeModal }) => {
     }
   };
 
+  //   console.log('isFormFull', isFormFull);
+
   const handleSubmit = e => {
     e.preventDefault();
-    closeModal();
+
+    if (!name || !number) {
+      setWarn('Сomplete all fields');
+    } else {
+      setWarn('');
+      dispatch(editContact(contactTo));
+      closeModal();
+    }
   };
 
   return (
@@ -63,6 +75,7 @@ export const EditForm = ({ contactToEdit, closeModal }) => {
           // required
         />
       </label>
+      {warn && <p style={{ color: 'red' }}>{warn}</p>}
       <button className={s.input + ' ' + s.btn} type="submit">
         Confirm changes
       </button>

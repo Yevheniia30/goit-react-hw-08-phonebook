@@ -30,9 +30,9 @@ export const deleteContact = createAsyncThunk(
 );
 
 export const editContact = createAsyncThunk(
-  'contacts/toggleContact',
-  async ({ id, isImportant }) => {
-    const { data } = await instance.put(`/contacts/${id}`, { isImportant });
+  'contacts/editContact',
+  async ({ id, name, number }) => {
+    const { data } = await instance.patch(`/contacts/${id}`, { name, number });
     return data;
   }
 );

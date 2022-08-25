@@ -3,6 +3,7 @@ import {
   getContact,
   addContact,
   deleteContact,
+  editContact,
   // toggleContact,
 } from './contactsOperations';
 // import { filterContact } from './contactsActions';
@@ -64,6 +65,19 @@ const contactsSlice = createSlice({
     },
     [deleteContact.rejected]: (state, { error }) => {
       state.loading = false;
+      state.error = error;
+    },
+
+    [editContact.pending]: state => ({
+      ...state,
+      error: null,
+    }),
+    [editContact.fulfilled]: (state, { payload }) => {
+      state.contacts = state.contacts.map(item =>
+        item.id === payload.id ? payload : item
+      );
+    },
+    [editContact.rejected]: (state, { error }) => {
       state.error = error;
     },
 
