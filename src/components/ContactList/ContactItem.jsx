@@ -51,4 +51,5 @@ ContactItem.propTypes = {
     id: PropTypes.string.isRequired,
     // isImportant: PropTypes.bool,
   }),
+  openModal: PropTypes.func.isRequired,
 };

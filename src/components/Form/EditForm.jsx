@@ -1,7 +1,7 @@
-import { useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { editContact } from 'redux/contacts/contactsOperations';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import s from './Form.module.css';
 
 export const EditForm = ({ contactToEdit, closeModal }) => {
@@ -9,7 +9,6 @@ export const EditForm = ({ contactToEdit, closeModal }) => {
   const { name, number } = contactTo;
 
   const dispatch = useDispatch();
-  //   const contacts = useSelector(state => state.contacts.contacts);
   const [warn, setWarn] = useState('');
 
   const handleChange = e => {
@@ -32,8 +31,6 @@ export const EditForm = ({ contactToEdit, closeModal }) => {
         return;
     }
   };
-
-  //   console.log('isFormFull', isFormFull);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -83,4 +80,11 @@ export const EditForm = ({ contactToEdit, closeModal }) => {
   );
 };
 
-EditForm.propTypes = {};
+EditForm.propTypes = {
+  contactToEdit: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }),
+  closeModal: PropTypes.func.isRequired,
+};

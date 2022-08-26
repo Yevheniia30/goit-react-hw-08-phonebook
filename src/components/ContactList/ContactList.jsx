@@ -12,7 +12,7 @@ export const ContactList = ({ openModal }) => {
   const loading = useSelector(state => state.contacts.loading);
   const error = useSelector(state => state.contacts.error);
 
-  console.log('error', error);
+  // console.log('error', error);
 
   useEffect(() => {
     dispatch(contactsOperations.getContact());

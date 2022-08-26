@@ -5,7 +5,7 @@ import s from './Form.module.css';
 // import { addContact } from 'redux/contacts/contactsOperations';
 import { contactsOperations } from 'redux/contacts';
 
-export const ContactForm = ({ toEdit }) => {
+export const ContactForm = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
 
@@ -83,7 +83,7 @@ export const ContactForm = ({ toEdit }) => {
         />
       </label>
       <button className={s.input + ' ' + s.btn} type="submit">
-        {toEdit ? 'Confirm changes' : ' Add contact'}
+        Add contact
       </button>
     </form>
   );
