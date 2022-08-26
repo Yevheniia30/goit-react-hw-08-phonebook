@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ContactForm, EditForm } from 'components/Form';
 import { ContactList } from 'components/ContactList';
 import { Filter } from 'components/Filter';
-import Modal from 'components/Modal/Modal';
+import { Modal } from 'components/Modal';
 
 const ContactsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
