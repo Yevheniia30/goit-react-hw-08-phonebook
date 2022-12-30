@@ -7,7 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 // import { configureStore } from '@reduxjs/toolkit';
 import App from 'App';
 import './index.css';
-import { store, persistor } from './redux/store';
+import { mystorage, persistor } from './redux/store';
 
 // const reducer = (state = {}, action) => state;
 // const store = configureStore(reducer);
@@ -15,7 +15,7 @@ import { store, persistor } from './redux/store';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-  <Provider store={store}>
+  <Provider store={mystorage}>
     <PersistGate loading="Loading..." persistor={persistor}>
       <HashRouter>
       {/* <BrowserRouter basename="/goit-react-hw-08-phonebook"> */}

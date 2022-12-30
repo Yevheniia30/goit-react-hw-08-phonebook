@@ -23,7 +23,7 @@ const authPersistConfig = {
 
 // const persistedReducer = persistReducer(persistConfig, reducer);
 
-export const store = configureStore({
+export const mystorage = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authSlice),
     contacts: contactsSlice,
@@ -37,4 +37,4 @@ export const store = configureStore({
   devTools: process.env.NODE_ENV !== 'production',
 });
 
-export const persistor = persistStore(store);
+export const persistor = persistStore(mystorage);

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import s from './Form.module.css';
 import { routes } from 'routes';
 import { Link } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export const UserForm = ({ onSubmit, isSignup }) => {
   const initialState = isSignup
@@ -34,6 +35,12 @@ export const UserForm = ({ onSubmit, isSignup }) => {
     setCredentials({
       ...initialState,
     });
+  };
+
+  const [type, setType] = useState('password');
+  const togglePassword = e => {
+    // const { type } = e.target.type;
+    type === 'password' ? setType('text') : setType('password');
   };
 
   return (
@@ -68,19 +75,46 @@ export const UserForm = ({ onSubmit, isSignup }) => {
             // required
           />
         </label>
-        <label className={s.label}>
+
+        <label className={s.label} style={{ position: 'relative' }}>
           Password
           <input
             className={s.input}
             value={password}
             onChange={handleChange}
-            type="password"
+            type={type}
             name="password"
+            // {type==='password'?<FaEye/>: <FaEyeSlash/>}
+            //  {<FaEyeSlash/>}
             //   pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             //   title="Password  must be digits and can contain spaces, dashes, parentheses and can start with +"
             // required
           />
+          {type === 'password' ? (
+            <FaEye
+              onClick={togglePassword}
+              style={{
+                // width: '24px',
+                // height: '24px',
+                position: 'absolute',
+                top: '35px',
+                left: '185px',
+              }}
+            />
+          ) : (
+            <FaEyeSlash
+              onClick={togglePassword}
+              style={{
+                // width: '24px',
+                // height: '24px',
+                position: 'absolute',
+                top: '35px',
+                left: '185px',
+              }}
+            />
+          )}
         </label>
+
         <button className={s.input + ' ' + s.btn} type="submit">
           {isSignup ? 'Sign up' : 'Log In'}
         </button>

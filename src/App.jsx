@@ -9,7 +9,7 @@ import { current } from 'redux/auth/authOperations';
 import PublicRoute from 'components/Routes/PublicRoute';
 import PrivateRoute from 'components/Routes/PrivateRoute';
 
-const HomePage = lazy(() => import('./pages/HomePage'));
+const HomePage = lazy(() => import('./pages/HomePage' /* webpackChunkName: "home-page" */));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const SignupPage = lazy(() => import('./pages/SignupPage'));
 const ContactsPage = lazy(() => import('./pages/ContactsPage'));
